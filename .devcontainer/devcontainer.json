@@ -1,0 +1,14 @@
+{
+  "name": "MySQL Server",
+  "image": "mysql/mysql-server:latest",
+  "ports": [
+    "3306:3306"
+  ],
+  "volumes": [
+    {
+      "name": "mysql-data",
+      "mountPath": "/var/lib/mysql"
+    }
+  ],
+  "postStartCommand": "mysql -u root -p < init.sql"
+}
